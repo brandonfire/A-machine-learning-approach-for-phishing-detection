@@ -1,0 +1,37 @@
+Feature 1: solved by regex
+Feature 2: easy.
+Feature 3: use request package. Very slow due to open url
+Feature 4,5,6,7,8,12: solved by yara
+Feature 9: have to check DNS. Must find another way
+Feature 10: very slow due to open url
+Feature 11: solved by regex
+Feature 13: use a builtin whitelist. Plan to include top 1000 domains.
+
+
+
+Problems:
+
+1. How to fast convert yara matches to our result. In this case I use a numpy.array for fast processing. First idea is convert the match list to python string list and then compare the list to decide how to code
+
+2. Feature 3 and 10 is terrible slow due to request url.
+
+
+3. Feature 9 have to find a faster way to check DNS registration
+
+MYURL: the mainjor work solution for phishing classification
+To run the program: 
+
+$ python myURL.py {yourURL}
+
+weights.outX: this is weights of each layer of neural network
+
+In the first shot I use a five layer NN and got an accuracy
+
+Overall accuracy
+0.853640886477
+False positive rate
+0.107594936709
+False negative rate
+0.177196686698
+
+Not very impressive, but in neural network it is very important to find how many layers is best for your classifier..
